@@ -1,6 +1,6 @@
 # Ansible Role: Node Exporter
 
-[![CI](https://github.com/DudeCalledBro/ansible-role-sudo/actions/workflows/ci.yml/badge.svg)](https://github.com/DudeCalledBro/ansible-role-sudo/actions/workflows/ci.yml)
+[![CI](https://github.com/DudeCalledBro/ansible-role-sudo/actions/workflows/molecule.yml/badge.svg)](https://github.com/DudeCalledBro/ansible-role-sudo/actions/workflows/molecule.yml)
 
 Install and Configure Sudo on Linux Systems!
 
