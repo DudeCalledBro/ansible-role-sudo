@@ -1,0 +1,10 @@
+- name: Verify
+  hosts: all
+  tasks:
+  - name: Ensure Sudo
+    become: true
+    remote_user: molecule
+    ansible.builtin.command: whoami
+    changed_when: false
+    failed_when: "not 'root' in sudo_check.stdout"
+    register: sudo_check

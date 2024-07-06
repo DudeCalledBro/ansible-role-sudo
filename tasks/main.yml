@@ -1,0 +1,34 @@
+- name: Install Sudo Package
+  ansible.builtin.package:
+    name: sudo
+    state: present
+
+- name: Create Sudoers.d Directory
+  ansible.builtin.file:
+    path: "{{ sudo_sudoersd_path }}"
+    owner: "{{ sudo_sudoersd_owner }}"
+    group: "{{ sudo_sudoersd_group }}"
+    state: directory
+    mode: 0755
+
+- name: Include Sudoers.d Directory
+  ansible.builtin.lineinfile:
+    dest: /etc/sudoers
+    regexp: "^[#@]includedir .*"
+    line: "#includedir {{ sudo_sudoersd_path }}"
+    owner: "{{ sudo_sudoersd_owner }}"
+    group: "{{ sudo_sudoersd_group }}"
+    validate: visudo -cf %s
+    mode: 0440
+
+- name: Create Sudoers Files
+  ansible.builtin.copy:
+    content: "{{ item.content }}"
+    dest: "{{ sudo_sudoersd_path }}/{{ item.name }}"
+    owner: "{{ sudo_sudoersd_owner }}"
+    group: "{{ sudo_sudoersd_group }}"
+    validate: visudo -cf %s
+    mode: 0440
+  loop: "{{ sudo_sudoers_files }}"
+  loop_control:
+    label: "{{ sudo_sudoersd_path }}/{{ item.name }}"
