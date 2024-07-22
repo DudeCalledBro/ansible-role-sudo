@@ -1,2 +1,5 @@
+#
+# Ansible managed
+#
 skip_list:
 - 'role-name'

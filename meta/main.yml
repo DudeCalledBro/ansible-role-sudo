@@ -3,7 +3,7 @@ dependencies: []
 galaxy_info:
   role_name: sudo
   author: dudecalledbro
-  description: Ansible Sudo Role.
+  description: Install and Configure Sudo.
   license: "license (MIT)"
   min_ansible_version: "2.15"
   platforms:
