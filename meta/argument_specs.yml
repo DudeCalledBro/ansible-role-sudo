@@ -1,0 +1,18 @@
+argument_specs:
+  main:
+    short_description: sudo
+    description: "Install and configure sudo."
+    author: dudecalledbro
+    options:
+      sudo_files:
+        type: list
+        elements: dict
+        options:
+          name:
+            type: str
+            required: true
+            description: "Name of the sudoers file."
+          content:
+            type: str
+            required: true
+            description: "Content of the sudoers file."

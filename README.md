@@ -2,7 +2,7 @@
 
 [![CI](https://github.com/DudeCalledBro/ansible-role-sudo/actions/workflows/molecule.yml/badge.svg)](https://github.com/DudeCalledBro/ansible-role-sudo/actions/workflows/molecule.yml)
 
-Install and Configure Sudo.
+Install and configure sudo.
 
 ## Prerequisites
 

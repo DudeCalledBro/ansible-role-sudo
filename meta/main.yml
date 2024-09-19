@@ -3,11 +3,15 @@ dependencies: []
 galaxy_info:
   role_name: sudo
   author: dudecalledbro
-  description: Install and Configure Sudo.
+  description: Install and configure sudo.
   license: "license (MIT)"
   min_ansible_version: "2.15"
   platforms:
   - name: Debian
+    versions:
+    - all
+
+  - name: MacOSX
     versions:
     - all
 

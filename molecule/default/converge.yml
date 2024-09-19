@@ -1,20 +1,20 @@
 - name: Converge
   hosts: all
   vars:
-    sudo_sudoers_files:
+    sudo_files:
     - name: 10-molecule
       content: |
         molecule ALL=(ALL) NOPASSWD: ALL
 
   pre_tasks:
-  - name: Update Cache (Debian)
+  - name: Update cache (debian)
     when: ansible_os_family == 'Debian'
     ansible.builtin.apt:
       update_cache: true
       cache_valid_time: 800
     changed_when: false
 
-  - name: Create Molecule User
+  - name: Create molecule user
     ansible.builtin.user:
       name: molecule
       state: present
